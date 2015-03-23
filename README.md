@@ -5,7 +5,7 @@
 	docker pull xuwang/docker-fleet-ui-builder
 	docker run --rm  -v /var/run/docker.sock:/var/run/docker.sock xuwang/docker-fleetui-builder:latest 
 
-  The result is _fleet-ui:latest_ image that you can run in a container.
+  The result image is called _fleet-ui:latest_ which you can run in a container, or tag and push to a dockerhub.
 
 ## Run the fleet-ui on CoreOS
 
@@ -13,7 +13,7 @@ Here is an example of how to [Run fleet-ui on CoreOS.](https://github.com/xuwang
 
 ## Build it yourself
 
-If you want to build everything yourself, clone the builder repo from https://github.com/xuwang/docker-fleetui-builder.
+If you want to build everything yourself, clone the builder repo from [docker-fleetui-builder](https://github.com/xuwang/docker-fleetui-builder).
 Before build, change the following line in Dockerfile to your forked fleet-ui repo. I forked _fleet-ui_ repo from [fleet-ui](https://github.com/purpleworks/fleet-ui.git) and 
 updated fleetctl to 0.9.1., among other things.
 
@@ -45,11 +45,11 @@ The builder image can be removed when you are sure you have a good fleet-ui imag
 
 ## Troubleshoot
 
-If you have problem with the fleet-ui, you can debug your builder environment by run the builder image:
+If you have problem with the fleet-ui, you can debug your build environment by run the builder image:
 
 	docker run --rm -i -t fleet-ui-builder bash
 
-The fleet-ui source code downloaded by go and located at /gopath diretory:
-![fleet-ui src tree](images/fleet-ui-src.png "fleet-ui src tree")
+The fleet-ui source code downloaded by Go is located at /gopath diretory:
+![fleet-ui src tree](https://github.com/xuwang/docker-fleetui-builder/blob/master/images/fleet-ui-src.png "fleet-ui src tree")
 
 Then you can manually run steps in the builder Dockerfile for troubleshooting issues.
