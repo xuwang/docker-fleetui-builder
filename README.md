@@ -1,4 +1,6 @@
 # Build fleet-ui docker image
+
+This a 'builder' image to build [purpleworks/fleet-ui](https://github.com/purpleworks/fleet-ui.git). If you forked the repo, change the Dockerfile's ENV FLEETUIREPO to reference your forked repo.
  
 ## Quick start
 
@@ -49,7 +51,8 @@ If you have problem with the fleet-ui, you can debug your build environment by r
 
 	docker run --rm -i -t fleet-ui-builder bash
 
-The fleet-ui source code downloaded by Go is located at /gopath diretory:
+The fleet-ui source code downloaded by Go is located at /gopath directory:
+
 ![fleet-ui src tree](https://github.com/xuwang/docker-fleetui-builder/blob/master/images/fleet-ui-src.png "fleet-ui src tree")
 
 Then you can manually run steps in the builder Dockerfile for troubleshooting issues.
