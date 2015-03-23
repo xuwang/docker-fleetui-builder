@@ -4,6 +4,8 @@ FROM google/golang:1.4
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV FLEETUIREPO github.com/xuwang/fleet-ui
+ENV FLEETCTL_VERSION  v0.9.1
+
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y  apt-utils \
@@ -33,7 +35,7 @@ RUN cd $GOPATH/src/${FLEETUIREPO}/angular && npm install grunt-contrib-compass -
 RUN cd $GOPATH/src/${FLEETUIREPO}/angular && grunt build --force
 
 RUN cd $GOPATH/src/${FLEETUIREPO}; curl -s -L \
-    https://github.com/coreos/fleet/releases/download/v0.9.1/fleet-v0.9.1-linux-amd64.tar.gz | tar xz -C tmp/
+    https://github.com/coreos/fleet/releases/download/${FLEETCTL_VERSION}/fleet-${FLEETCTL_VERSION}-linux-amd64.tar.gz | tar xz -C tmp/
 
 CMD tag=$(cd ${GOPATH}/src/${FLEETUIREPO}; git rev-parse --short=12 HEAD) \
     && docker build -t fleet-ui:$tag ${GOPATH}/src/${FLEETUIREPO} \
