@@ -3,8 +3,8 @@ FROM google/golang:1.4
 # It's necessary only when host os is not same as the base image i.e. Debian GNU/Linux 7 (wheezy)
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV FLEETUIREPO github.com/xuwang/fleet-ui
-ENV FLEETCTL_VERSION  v0.9.1
+ENV FLEETUIREPO github.com/purpleworks/fleet-ui
+ENV FLEETCTL_VERSION v0.9.1
 
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
     && apt-get update \
@@ -34,9 +34,11 @@ RUN gem install compass rdoc
 RUN cd $GOPATH/src/${FLEETUIREPO}/angular && npm install grunt-contrib-compass --save-dev
 RUN cd $GOPATH/src/${FLEETUIREPO}/angular && grunt build --force
 
-RUN cd $GOPATH/src/${FLEETUIREPO}; curl -s -L \
-    https://github.com/coreos/fleet/releases/download/${FLEETCTL_VERSION}/fleet-${FLEETCTL_VERSION}-linux-amd64.tar.gz | tar xz -C tmp/
+# Install fleetctl, and change the fleetctl version in fleet-ui's Dockefile to match
+RUN cd $GOPATH/src/${FLEETUIREPO}; \
+    curl -s -L https://github.com/coreos/fleet/releases/download/${FLEETCTL_VERSION}/fleet-${FLEETCTL_VERSION}-linux-amd64.tar.gz | tar xz -C tmp/
 
 CMD tag=$(cd ${GOPATH}/src/${FLEETUIREPO}; git rev-parse --short=12 HEAD) \
+    && sed -i "s/fleet.*-linux-amd64/fleet-${FLEETCTL_VERSION}-linux-amd64/" ${GOPATH}/src/${FLEETUIREPO}/Dockerfile \
     && docker build -t fleet-ui:$tag ${GOPATH}/src/${FLEETUIREPO} \
     && docker tag fleet-ui:$tag fleet-ui:latest 
