@@ -1,14 +1,28 @@
 # Build fleet-ui docker image
-
+ 
 ## Quick start
 
-Before build, change the following line in Dockerfile to your forked fleet-ui repo. I forked my repo from [fleet-ui](https://github.com/purpleworks/fleet-ui.git) and updated fleetctl to 0.9.1., among other things.
+	docker pull xuwang/fleet-ui-builder
+        docker run --rm  -v /var/run/docker.sock:/var/run/docker.sock xuwang/docker-fleetui-builder:latest 
+
+  The result is _fleet-ui:latest_ image that you can run in a container.
+
+## Run the fleet-ui on CoreOS
+
+Here is an example of how to [Run fleet-ui on CoreOS](https://github.com/xuwang/coreos-docker-dev/blob/master/README-fleet-ui.md)
+
+## Build it yourself
+
+If you want to build everything yourself, clone the builder repo from https://github.com/xuwang/docker-fleetui-builder.
+Before build, change the following line in Dockerfile to your forked fleet-ui repo. I forked _fleet-ui_ repo from [fleet-ui](https://github.com/purpleworks/fleet-ui.git) and 
+updated fleetctl to 0.9.1., among other things.
 
 	ENV FLEETUIREPO github.com/xuwang/fleet-ui
 
 Then run:
 
-	./build.sh
+	https://github.com/xuwang/docker-fleetui-builder
+        ./build.sh
 
 It builds two images. The first one is _fleet-ui-builder_, and then the script calls it to build _fleet-ui_.
 
@@ -29,17 +43,13 @@ The builder image can be removed when you are sure you have a good fleet-ui imag
 
         docker rmi fleet-ui-builder:latest
 
-## Run the fleet-ui on CoreOS
-
-Here is an example of how to [run fleet-ui on CoreOS](https://github.com/xuwang/coreos-docker-dev/blob/master/README-fleet-ui.md)
-
 ## Troubleshoot
 
 If you have problem with the fleet-ui, you can debug your builder environment by run the builder image:
 
         docker run --rm -i -t fleet-ui-builder bash
 
-The src code is located at /gopath diretory:
+The fleet-ui source code downloaded by go and located at /gopath diretory:
 ![fleet-ui src tree](images/fleet-ui-src.png "fleet-ui src tree")
 
-Then you can manually run steps in the builder Dockerfile to troubleshoot issues.
+Then you can manually run steps in the builder Dockerfile for troubleshooting issues.
