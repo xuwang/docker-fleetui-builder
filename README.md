@@ -4,7 +4,7 @@ This a 'builder' image to build [purpleworks/fleet-ui](https://github.com/purple
  
 ## Quick start
 
-	docker pull xuwang/docker-fleet-ui-builder
+	docker pull xuwang/docker-fleetui-builder
 	docker run --rm  -v /var/run/docker.sock:/var/run/docker.sock xuwang/docker-fleetui-builder:latest 
 
   The result image is called _fleet-ui:latest_ which you can run in a container, or tag and push to a dockerhub.
