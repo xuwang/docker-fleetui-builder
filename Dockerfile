@@ -3,7 +3,8 @@ FROM google/golang:1.4
 # It's necessary only when host os is not same as the base image i.e. Debian GNU/Linux 7 (wheezy)
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV FLEETUIREPO github.com/purpleworks/fleet-ui
+#ENV FLEETUIREPO github.com/purpleworks/fleet-ui
+ENV FLEETUIREPO github.com/xuwang/fleet-ui
 ENV FLEETCTL_VERSION v0.9.1
 
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
