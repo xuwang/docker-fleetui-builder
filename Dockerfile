@@ -1,4 +1,5 @@
 FROM google/golang:1.4
+MAINTAINER Xu Wang <xuwang@gmail.com>
 # Install docker.io, 
 # It's necessary only when host os is not same as the base image i.e. Debian GNU/Linux 7 (wheezy)
 
@@ -7,6 +8,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV FLEETUIREPO github.com/xuwang/fleet-ui
 ENV FLEETCTL_VERSION v0.9.1
 
+# Install docker.io, 
+# It's necessary only when host os is not same as the base image i.e. Debian GNU/Linux 7 (wheezy)
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y  apt-utils \
