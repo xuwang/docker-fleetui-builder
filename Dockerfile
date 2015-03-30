@@ -2,9 +2,6 @@ FROM google/golang:1.4
 MAINTAINER Xu Wang <xuwang@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-#ENV FLEETUIREPO github.com/purpleworks/fleet-ui
-ENV FLEETUIREPO github.com/xuwang/fleet-ui
-ENV FLEETCTL_VERSION v0.9.1
 
 # Install docker.io, 
 # It's necessary only when host os is not same as the base image i.e. Debian GNU/Linux 7 (wheezy)
