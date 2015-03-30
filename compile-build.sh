@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #FLEETUIREPO=github.com/purpleworks/fleet-ui
-FLEETUIREPO=github.com/xuwang/fleet-ui
-FLEETCTL_VERSION=v0.9.1
+FLEETUIREPO=${FLEETUIREPO:-github.com/purpleworks/fleet-ui}
+FLEETCTL_VERSION=${FLEETCTL_VERSION:-v0.9.1}
 
 go get ${FLEETUIREPO} \
     && cp $GOPATH/bin/fleet-ui $GOPATH/src/${FLEETUIREPO}/tmp \
