@@ -10,4 +10,4 @@ docker run --rm --env FLEETCLT_VERSION=v0.9.1 --env FLEETUIREPO=github.com/purpl
            -v /var/run/docker.sock:/var/run/docker.sock fleet-ui-builder:latest
 
 # Show the build result
-docker images 
+docker images fleet-ui
