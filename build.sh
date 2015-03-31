@@ -6,7 +6,8 @@ docker build -t fleet-ui-builder .
 
 # Run the builder image to build fleet-ui docker image
 docker rmi fleet-ui:latest > /dev/null 2>&1
-docker run --rm  -v /var/run/docker.sock:/var/run/docker.sock fleet-ui-builder:latest
+docker run --rm --env FLEETCLT_VERSION=v0.9.1 --env FLEETUIREPO=github.com/purpleworks/fleet-ui.git \
+           -v /var/run/docker.sock:/var/run/docker.sock fleet-ui-builder:latest
 
 # Show the build result
 docker images 

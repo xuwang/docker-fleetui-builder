@@ -16,14 +16,9 @@ Here is an example of how to [Run fleet-ui on CoreOS.](https://github.com/xuwang
 ## Build it yourself
 
 If you want to build everything yourself, clone the builder repo from [docker-fleetui-builder](https://github.com/xuwang/docker-fleetui-builder).
-Before build, change the following line in Dockerfile to your forked fleet-ui repo. I forked _fleet-ui_ repo from [fleet-ui](https://github.com/purpleworks/fleet-ui.git) and 
-updated fleetctl to 0.9.1., among other things.
+Make any changes you want to put in builder image in Dockerfile, and you can also override the default fleet-ui repository and fleetclt version in build.sh. 
+After the customization: 
 
-	ENV FLEETUIREPO github.com/xuwang/fleet-ui
-
-Then run:
-
-	https://github.com/xuwang/docker-fleetui-builder
 	./build.sh
 
 It builds two images. The first one is _fleet-ui-builder_, and then the script calls it to build _fleet-ui_.
