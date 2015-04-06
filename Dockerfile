@@ -14,12 +14,15 @@ RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/s
     && curl -L https://www.npmjs.org/install.sh | sh \
     && gem install compass rdoc
 
-RUN npm install angular \
+RUN npm install -g angular \
     && npm install -g grunt-cli \
     && npm install -g bower
 
 ADD compile-build.sh /root/compile-build.sh
 RUN chmod 755 /root/compile-build.sh
+
+# Expose ${GOPATH}/src/
+VOLUME ${GOPATH}/src/
 
 WORKDIR /root
 CMD ./compile-build.sh
