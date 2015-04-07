@@ -3,8 +3,9 @@ MAINTAINER Xu Wang <xuwang@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install docker.io, 
-# It's necessary only when host os is not same as the base image i.e. Debian GNU/Linux 7 (wheezy)
+# Install build-essential, ruby, and nodejs, etc.
+# Also install docker.io, which necessary only 
+# when host os is not same as the base image of this Dockerfile
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get install --force-yes -y apt-utils ruby-full build-essential rubygems \

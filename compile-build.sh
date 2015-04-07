@@ -1,6 +1,5 @@
-#!/bin/sh -e
+#!/bin/sh
 
-#FLEETUIREPO=github.com/purpleworks/fleet-ui
 FLEETUIREPO=${FLEETUIREPO:-github.com/purpleworks/fleet-ui}
 FLEET_VERSION=${FLEET_VERSION:-v0.9.1}
 DOCKER_IMAGE_VERSION=${DOCKER_IMAGE_VERSION:-"latest"}
