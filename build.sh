@@ -12,7 +12,7 @@ echo building fleet-ui ...
 docker rmi fleet-ui:latest > /dev/null 2>&1
 docker run -t --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	--env FLEET_VERSION=v0.9.1 \
+	--env FLEET_VERSION=v0.10.2 \
 	--env FLEETUIREPO=$REPO \
 	--dns 8.8.8.8 \
 	fleet-ui-builder:latest
