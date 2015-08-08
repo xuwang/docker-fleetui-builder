@@ -6,8 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install build-essential, ruby, and nodejs, etc.
 # Also install docker.io, which necessary only 
 # when host os is not same as the base image of this Dockerfile
-RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
+RUN echo 'deb http://http.debian.net/debian jessie-backports main' >> /etc/apt/sources.list \
     && apt-get update \
+    && apt-get install docker.io \
     && apt-get install --force-yes -y apt-utils ruby-full build-essential rubygems \
     && apt-get install --force-yes -y -t wheezy-backports linux-image-amd64 nodejs libpng-dev \
     && update-alternatives --install /usr/bin/node nodejs /usr/bin/nodejs 100 \
