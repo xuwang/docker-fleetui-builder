@@ -1,8 +1,10 @@
 # Build fleet-ui docker image
 
-This a 'builder' image to build [purpleworks/fleet-ui](https://github.com/purpleworks/fleet-ui.git). 
+Feature: No need to install required packages on a host in order to build fleetui image. This tool builds a 'builder' image and uses it to build [purpleworks/fleet-ui](https://github.com/purpleworks/fleet-ui.git).
  
 ## Quick start
+
+Take a look at the build.sh to change default values, e.g. the fleet version or the your/fleet-ui.git. Then:
 
 	./build.sh
 	
