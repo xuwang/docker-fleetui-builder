@@ -4,7 +4,7 @@ Feature: No need to install required packages on a host in order to build fleetu
  
 ## Quick start
 
-Take a look at the build.sh to change default values, e.g. the fleet version or the your/fleet-ui.git. Then:
+Take a look at the build.sh if you need to change the default fleetctl version or fleet-ui.git repo. Then:
 
 	./build.sh
 	
@@ -25,7 +25,7 @@ The builder environment includes:
 
 * golang 1.4
 * npm, ruby, gem etc.
-* docker from Debian/Wheezy release
+* docker from Debian/Jessie release
 
 The builder image can be removed when you are sure you have a good fleet-ui image: 
 
