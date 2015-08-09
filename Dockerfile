@@ -1,4 +1,4 @@
-FROM google
+FROM golang
 MAINTAINER Xu Wang <xuwang@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
