@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO=${REPO:-github.com/purpleworks/fleet-ui}
+REPO=${1:-github.com/purpleworks/fleet-ui}
 
 # First build the fleet-ui-builder image
 echo building fleet-ui-builder ...
