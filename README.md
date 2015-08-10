@@ -12,6 +12,21 @@ Take a look at the build.sh if you need to change the default fleetctl version o
   
   You can customize the default fleet-ui repo or fleetctl version in the build.sh.
 
+## Use ready-make docker-fleet-ui builder image
+```
+docker pull xuwang/docker-fleetui-builder
+```
+
+And run:
+```
+$ docker run -t --rm \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	--env FLEET_VERSION=v0.10.2 \
+	--env FLEETUIREPO=github.com/<yourspace>/<your fleet-ui repo> \
+	--dns 8.8.8.8 \
+	xuwang/docker-fleetui-builder
+```
+
 ## Run the fleet-ui on CoreOS
 
 Here is an example of how to [Run fleet-ui on CoreOS.](https://github.com/xuwang/coreos-docker-dev/blob/master/README-fleet-ui.md)
