@@ -38,7 +38,7 @@ image is called _fleet-ui-builder_ which, when run, will build _fleet-ui_ docker
 
 The builder environment includes:
 
-* golang 1.4
+* latest golang
 * npm, ruby, gem etc.
 * docker from Debian/Jessie release
 
