@@ -17,15 +17,26 @@ Take a look at the build.sh if you need to change the default fleetctl version o
 docker pull xuwang/docker-fleetui-builder
 ```
 
-And run:
+Replace the FLEETUIREPO with your fleet-ui repo or use the default [purpleworks/fleet-ui](https://github.com/purpleworks/fleet-ui.git)
 ```
 $ docker run -t --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	--env FLEET_VERSION=v0.11.5 \
-	--env FLEETUIREPO=github.com/<yourspace>/<your fleet-ui repo> \
+	--env FLEETUIREPO=github.com/purpleworks/fleet-ui \
 	--dns 8.8.8.8 \
 	xuwang/docker-fleetui-builder
 ```
+
+The output:
+
+```
++ docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock --env FLEETUIREPO=github.com/xueshanf/fleet-ui --dns 8.8.8.8 xuwang/docker-fleetui-builder
+FLEET-UI REPO - github.com/purpleworks/fleet-ui
+FLEET VERSION - v0.11.5
+BUILD DOCKER IMAGE VERSION - latest
+...
+```
+
 
 ## Run the fleet-ui on CoreOS
 
