@@ -21,7 +21,7 @@ And run:
 ```
 $ docker run -t --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	--env FLEET_VERSION=v0.10.2 \
+	--env FLEET_VERSION=v0.11.5 \
 	--env FLEETUIREPO=github.com/<yourspace>/<your fleet-ui repo> \
 	--dns 8.8.8.8 \
 	xuwang/docker-fleetui-builder
