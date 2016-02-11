@@ -4,7 +4,7 @@ MAINTAINER Xu Wang <xuwang@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install build-essential, ruby, and nodejs, etc.
-# Also install docker.io, which necessary only 
+# Also install docker.io, which necessary only
 # when host os is not same as the base image of this Dockerfile
 RUN echo 'deb http://http.debian.net/debian jessie-backports main' >> /etc/apt/sources.list \
     && apt-get update \
