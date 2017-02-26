@@ -16,7 +16,7 @@ echo building fleet-ui ...
 docker rmi fleet-ui:latest > /dev/null 2>&1
 docker run -t --rm \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  --env FLEET_VERSION=v0.11.7 \
+  --env FLEET_VERSION=v0.11.8 \
   --env FLEETUIREPO=$REPO \
   --env http_proxy=${http_proxy} \
   --env https_proxy=${https_proxy} \
