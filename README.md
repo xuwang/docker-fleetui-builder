@@ -21,7 +21,7 @@ Replace the FLEETUIREPO with your fleet-ui repo or use the default [purpleworks/
 ```
 $ docker run -t --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	--env FLEET_VERSION=v0.11.5 \
+	--env FLEET_VERSION=v0.11.8 \
 	--env FLEETUIREPO=github.com/purpleworks/fleet-ui \
 	--dns 8.8.8.8 \
 	xuwang/docker-fleetui-builder
