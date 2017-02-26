@@ -13,6 +13,7 @@ RUN echo 'deb http://http.debian.net/debian jessie-backports main' >> /etc/apt/s
     && apt-get install --force-yes -y -t jessie-backports linux-image-amd64 nodejs libpng-dev \
     && update-alternatives --install /usr/bin/node nodejs /usr/bin/nodejs 100 \
     && curl -L https://www.npmjs.org/install.sh | sh \
+    && gem install --no-rdoc --no-ri sass \
     && gem install compass rdoc
 
 RUN npm install -g angular \
